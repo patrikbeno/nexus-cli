@@ -143,7 +143,7 @@ func (r Registry) DeleteImageByTag(image string, tag string) error {
 	}
 	client := &http.Client{}
 
-	url := fmt.Sprintf("%s/repository/%s/v2/%s/manifests/%s", r.Host, r.Repository, image, sha)
+	url := fmt.Sprintf("%s/repository/%s/v2/%s/manifests/%s", r.Host, r.Repository, image, tag)
 	req, err := http.NewRequest("DELETE", url, nil)
 	if err != nil {
 		return err
